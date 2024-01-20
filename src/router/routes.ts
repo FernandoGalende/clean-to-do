@@ -1,17 +1,25 @@
-import * as views from "../components/views";
+import * as views from '../views';
 
-import { LOGIN, HOME } from "./paths";
+import { LOGIN, TODOS } from './paths';
+
+type Route = {
+  Component: React.ComponentType;
+  path: string;
+  isPrivate: boolean;
+};
 
 const Login = {
   Component: views.Login,
   path: LOGIN,
+  isPrivate: false
 };
 
 const Home = {
   Component: views.Home,
-  path: HOME,
+  path: TODOS,
+  isPrivate: true
 };
 
-const routes = [Login, Home];
+const routes: Route[] = [Login, Home];
 
 export default routes;
