@@ -3,12 +3,10 @@ import { Button, Input, Flex, Space, Checkbox } from 'antd';
 import Card from 'antd/es/card/Card';
 import { DeleteTwoTone, EditTwoTone } from '@ant-design/icons';
 
-import { useAuth } from 'src/context/AuthContext/useAuth';
 import { useTodos } from 'src/context/TodosContext/useTodos';
 import TaskTitle from './components/TaskText/TaskText.container';
 
 function Home() {
-  const { logout } = useAuth();
   const { addTask, deleteTask, toggleTask, updateTask, todos } = useTodos();
   const [task, setTask] = useState<string>('');
   const [isEditing, setEditing] = useState<boolean>(false);
@@ -25,14 +23,13 @@ function Home() {
   };
 
   return (
-    <div>
+    <Flex gap="middle" vertical>
       <Space.Compact style={{ width: '100%' }}>
         <Input value={task} onChange={evt => setTask(evt.target.value)} />
         <Button type="primary" onClick={handleOnAddTask} disabled={isAddDisabled}>
           Add
         </Button>
       </Space.Compact>
-      <Button onClick={logout}>logout</Button>
       <Flex gap="middle" vertical>
         {todos.map(todo => (
           <Card hoverable size="small" key={todo.id}>
@@ -47,7 +44,7 @@ function Home() {
           </Card>
         ))}
       </Flex>
-    </div>
+    </Flex>
   );
 }
 

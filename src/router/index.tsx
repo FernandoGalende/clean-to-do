@@ -5,12 +5,14 @@ import { ProtectedRoute } from 'src/components/routing/ProtectedRoute';
 import { LOGIN } from './paths';
 import { AuthProvider } from 'src/context/AuthContext/useAuth';
 import { TodosProvider } from 'src/context/TodosContext/useTodos';
+import { GlobalAppStyle } from 'src/style/Global';
 
 // TODO: Wrap only
 const AppRouter = () => (
   <BrowserRouter>
     <AuthProvider>
       <TodosProvider>
+        <GlobalAppStyle />
         <Routes>
           <Route path="/" element={<Navigate to={LOGIN} />} />
           {routes.map(({ Component, path, isPrivate }) => {
