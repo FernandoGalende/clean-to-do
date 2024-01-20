@@ -18,7 +18,11 @@ const TaskTitle = ({ todo }: TaskDeskProps) => {
   if (isEditing) {
     return (
       <Space.Compact style={{ width: '100%' }}>
-        <Input value={update} onChange={evt => setUpdateTask(evt.target.value)} />
+        <Input
+          value={update}
+          onChange={evt => setUpdateTask(evt.target.value)}
+          data-testid="edit-input"
+        />
         <Button type="primary" onClick={handleUpdateTask}>
           Save
         </Button>
@@ -29,7 +33,7 @@ const TaskTitle = ({ todo }: TaskDeskProps) => {
   return (
     <Flex style={{ width: '100%' }} justify="space-between">
       <Typography.Text delete={todo.done}>{todo.task}</Typography.Text>
-      <EditTwoTone onClick={() => setEditing(true)} />
+      <Button shape="circle" icon={<EditTwoTone />} onClick={() => setEditing(true)} />
     </Flex>
   );
 };

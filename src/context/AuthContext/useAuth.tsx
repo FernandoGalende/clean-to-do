@@ -17,10 +17,8 @@ const defaultState: ProviderType = {
 
 const AuthContext = createContext(defaultState);
 
-// Putting this here only executes once
-const isAuthenticated = !!getAccessToken();
-
 export const AuthProvider = ({ children }: AuthProviderProps) => {
+  const isAuthenticated = !!getAccessToken();
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
@@ -32,7 +30,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
       try {
         const res = await api.login(credentials);
-
         if (!res.ok) {
           throw new Error('Request failed');
         }

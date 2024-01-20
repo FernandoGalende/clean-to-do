@@ -20,7 +20,7 @@ function Home() {
   return (
     <Flex gap="middle" vertical>
       <Space.Compact style={{ width: '100%' }}>
-        <Input value={task} onChange={evt => setTask(evt.target.value)} />
+        <Input value={task} onChange={evt => setTask(evt.target.value)} data-testid="add-input" />
         <Button type="primary" onClick={handleOnAddTask} disabled={isAddDisabled}>
           Add
         </Button>
@@ -29,10 +29,18 @@ function Home() {
         {todos.map(todo => (
           <Card hoverable size="small" key={todo.id}>
             <Flex gap="middle" vertical={false} justify="space-between">
-              <Checkbox checked={todo.done} onClick={() => toggleTask(todo.id)} />
+              <Checkbox
+                checked={todo.done}
+                onClick={() => toggleTask(todo.id)}
+                name="mark-as-done"
+              />
               <TaskTitle todo={todo} />
               <Flex gap="middle" vertical={false}>
-                <DeleteTwoTone onClick={() => deleteTask(todo.id)} />
+                <Button
+                  shape="circle"
+                  icon={<DeleteTwoTone />}
+                  onClick={() => deleteTask(todo.id)}
+                />
               </Flex>
             </Flex>
           </Card>
