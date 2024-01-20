@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import { Credentials } from 'src/declarations/Auth';
 
 type LoginResponse = {
@@ -7,8 +6,9 @@ type LoginResponse = {
 };
 
 // simulate the native javascript fetch
-const mockedFetcher = async (): Promise<LoginResponse> => {
-  const token = nanoid();
+const mockedFetcher = async ({ email, password }: Credentials): Promise<LoginResponse> => {
+  const token = `${email}_${password}_token`;
+
   try {
     // Simulate a http response with a delay of 500 milliseconds
     return new Promise(res => setTimeout(() => res({ ok: true, access_token: token }), 500));
@@ -21,6 +21,5 @@ const mockedFetcher = async (): Promise<LoginResponse> => {
 };
 
 export const login = async (credentials: Credentials) => {
-  console.info('Credentials: ', credentials);
-  return mockedFetcher();
+  return mockedFetcher(credentials);
 };

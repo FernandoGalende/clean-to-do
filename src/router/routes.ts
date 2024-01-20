@@ -14,12 +14,12 @@ const Login = {
   isPrivate: false
 };
 
-const Home = {
-  Component: views.Home,
+const Todos = {
+  Component: views.Todos,
   path: TODOS,
   isPrivate: true
 };
 
-const routes: Route[] = [Login, Home];
+const routes: Route[] = [Login, Todos];
 
 export default routes;

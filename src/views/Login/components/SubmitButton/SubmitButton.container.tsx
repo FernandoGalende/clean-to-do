@@ -22,7 +22,7 @@ const SubmitButton = ({ form, error, loading }: SubmitButtonProps) => {
 
   return (
     <Button type="primary" htmlType="submit" disabled={!submittable || error} loading={loading}>
-      Submit
+      Login
     </Button>
   );
 };
