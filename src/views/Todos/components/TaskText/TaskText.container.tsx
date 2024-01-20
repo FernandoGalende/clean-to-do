@@ -1,22 +1,37 @@
-import { Button, Input, Space, Typography } from 'antd';
 import { useState } from 'react';
-import { TaskDeskProps } from './TaskText.decl';
+import { Button, Flex, Input, Space, Typography } from 'antd';
+import { EditTwoTone } from '@ant-design/icons';
 
-const TaskTitle = ({ todo, onUpdateTask, isEditing }: TaskDeskProps) => {
+import { TaskDeskProps } from './TaskText.decl';
+import { useTodos } from 'src/context/TodosContext/useTodos';
+
+const TaskTitle = ({ todo }: TaskDeskProps) => {
+  const { updateTask } = useTodos();
   const [update, setUpdateTask] = useState(todo.task);
+  const [isEditing, setEditing] = useState<boolean>(false);
+
+  const handleUpdateTask = () => {
+    setEditing(false);
+    updateTask({ ...todo, task: update });
+  };
 
   if (isEditing) {
     return (
       <Space.Compact style={{ width: '100%' }}>
         <Input value={update} onChange={evt => setUpdateTask(evt.target.value)} />
-        <Button type="primary" onClick={() => onUpdateTask({ ...todo, task: update })}>
+        <Button type="primary" onClick={handleUpdateTask}>
           Save
         </Button>
       </Space.Compact>
     );
   }
 
-  return <Typography.Text delete={todo.done}>{todo.task}</Typography.Text>;
+  return (
+    <Flex style={{ width: '100%' }} justify="space-between">
+      <Typography.Text delete={todo.done}>{todo.task}</Typography.Text>
+      <EditTwoTone onClick={() => setEditing(true)} />
+    </Flex>
+  );
 };
 
 export default TaskTitle;
