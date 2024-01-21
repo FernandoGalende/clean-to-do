@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { renderHook, act, cleanup } from '@testing-library/react';
 import { test, vi } from 'vitest';
 
 import { AuthProvider, useAuth } from '../useAuth';
@@ -12,6 +12,10 @@ vi.mock('react-router-dom', async () => {
 });
 
 describe('useAuth', () => {
+  afterEach(() => {
+    cleanup();
+  });
+
   test('returns the context values', () => {
     const { result } = renderHook(() => useAuth(), {
       wrapper: AuthProvider // Wrap the hook with context provider
@@ -34,6 +38,8 @@ describe('useAuth', () => {
     await act(async () => {
       await result.current.login({ email: 'fake@email.com', password: 'xxxxx' });
     });
+
+    rerender();
 
     expect(result.current.isAuthenticated).toEqual(true);
     expect(result.current.loading).toEqual(false);

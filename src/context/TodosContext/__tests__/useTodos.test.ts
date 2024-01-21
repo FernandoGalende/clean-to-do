@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { renderHook, act } from '@testing-library/react';
 import { test, vi } from 'vitest';
 
 import { TodosProvider, useTodos } from '../useTodos';
