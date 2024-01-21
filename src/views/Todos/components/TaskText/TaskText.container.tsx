@@ -3,10 +3,8 @@ import { Button, Flex, Input, Space, Typography } from 'antd';
 import { EditTwoTone } from '@ant-design/icons';
 
 import { TaskDeskProps } from './TaskText.decl';
-import { useTodos } from 'src/context/TodosContext/useTodos';
 
-const TaskTitle = ({ todo }: TaskDeskProps) => {
-  const { updateTask } = useTodos();
+const TaskText = ({ todo, updateTask }: TaskDeskProps) => {
   const [update, setUpdateTask] = useState(todo.task);
   const [isEditing, setEditing] = useState<boolean>(false);
 
@@ -38,4 +36,4 @@ const TaskTitle = ({ todo }: TaskDeskProps) => {
   );
 };
 
-export default TaskTitle;
+export default TaskText;
