@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 import { test, vi } from 'vitest';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { ProtectedRoute } from '../ProtectedRoute';
+import * as useAuthContext from 'src/context';
 
-import * as useAuthContext from 'src/context/AuthContext/useAuth';
+import { ProtectedRoute } from '../ProtectedRoute';
 
 describe('ProtectedRoute', () => {
   test('Should renders children when authenticated', () => {

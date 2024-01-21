@@ -3,7 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 // To Test
 import Login from '../Login.container';
-import { AuthProvider } from 'src/context/AuthContext/useAuth';
+import { AuthProvider } from 'src/context';
 import { BrowserRouter } from 'react-router-dom';
 
 const renderLogin = () => {

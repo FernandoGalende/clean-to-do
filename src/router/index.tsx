@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import routes from './routes';
 import { ProtectedRoute } from 'src/components/routing/ProtectedRoute';
 import { LOGIN } from './paths';
-import { AuthProvider } from 'src/context/AuthContext/useAuth';
-import { TodosProvider } from 'src/context/TodosContext/useTodos';
+
+import { AuthProvider, TodosProvider } from 'src/context';
 import { GlobalAppStyle } from 'src/style/Global';
 
 // TODO: Wrap only

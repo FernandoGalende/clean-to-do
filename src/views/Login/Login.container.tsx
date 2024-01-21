@@ -3,7 +3,7 @@ import { Form, Input } from 'antd';
 import { Credentials } from '../../declarations/Auth';
 
 import { SubmitButton } from './components';
-import { useAuth } from 'src/context/AuthContext/useAuth';
+import { useAuth } from 'src/context';
 
 function Login() {
   const [form] = Form.useForm();

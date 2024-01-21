@@ -1,6 +1,6 @@
 import { Row, Col, Button, Flex } from 'antd';
 import { Navigate } from 'react-router-dom';
-import { useAuth } from 'src/context/AuthContext/useAuth';
+import { useAuth } from 'src/context';
 
 // This component is used to protect routes that require authentication
 export const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {

@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 // To Test
 import TaskText from '../TaskText.container';
 
-import { TodosProvider } from 'src/context/TodosContext/useTodos';
+import { TodosProvider } from 'src/context';
 import { TaskDeskProps } from '../TaskText.decl';
 
 const mockTodo = {

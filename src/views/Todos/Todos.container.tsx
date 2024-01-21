@@ -3,7 +3,7 @@ import { Button, Input, Flex, Space, Checkbox } from 'antd';
 import Card from 'antd/es/card/Card';
 import { DeleteTwoTone } from '@ant-design/icons';
 
-import { useTodos } from 'src/context/TodosContext/useTodos';
+import { useTodos } from 'src/context';
 import TaskTitle from './components/TaskText/TaskText.container';
 
 function Todos() {
