@@ -34,7 +34,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
           throw new Error('Request failed');
         }
         setAccessToken(res.access_token);
-        console.log('------->');
         navigate(TODOS);
       } catch {
         setError(true);
