@@ -1,9 +1,11 @@
-import { Row, Col, Button, Flex } from 'antd';
 import { ProtectedRouteViewProps } from './ProtectedRoute.decl';
+
+import { Flex } from 'src/style/components';
+import { Row, Button, Col } from 'src/components';
 
 function ProtectedRouteView({ children, logout }: ProtectedRouteViewProps) {
   return (
-    <Flex gap="middle" vertical>
+    <Flex flexDirection="column">
       <Row justify="end">
         <Button type="text" onClick={logout}>
           Logout

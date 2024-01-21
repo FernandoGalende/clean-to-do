@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Button, Flex, Typography } from 'antd';
-import { EditTwoTone } from '@ant-design/icons';
+import { Button, EditTwoTone, Typography } from 'src/components';
 
 import { TaskTitleProps } from './TaskTitle.decl';
 import TaskTitleEditor from '../TaskTitleEditor/TaskTitleEditor.view';
+import { Flex } from 'src/style/components';
 
 function TaskTitle({ todo, updateTask }: TaskTitleProps) {
   const [update, setUpdateTask] = useState(todo.task);
@@ -17,7 +17,7 @@ function TaskTitle({ todo, updateTask }: TaskTitleProps) {
   if (isEditing) return <TaskTitleEditor {...{ update, setUpdateTask, handleUpdateTask }} />;
 
   return (
-    <Flex style={{ width: '100%' }} justify="space-between">
+    <Flex w="100%" alignItems="center" justifyContent="space-between" px="8">
       <Typography.Text delete={todo.done}>{todo.task}</Typography.Text>
       <Button shape="circle" icon={<EditTwoTone />} onClick={() => setEditing(true)} />
     </Flex>

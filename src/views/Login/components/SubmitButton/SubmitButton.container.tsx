@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Form } from 'antd';
+import { Form } from 'src/components';
 
 import SubmitButtonView from './SubmitButton.view';
 import { SubmitButtonProps } from './SubmitButton.decl';

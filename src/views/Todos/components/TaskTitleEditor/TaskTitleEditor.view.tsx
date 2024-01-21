@@ -1,4 +1,4 @@
-import { Space, Input, Button } from 'antd';
+import { Space, Input, Button } from 'src/components';
 import { TaskTitleEditorProps } from './TaskTitleEditor.decl';
 
 function TaskTitleEditor({ update, setUpdateTask, handleUpdateTask }: TaskTitleEditorProps) {

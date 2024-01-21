@@ -1,4 +1,4 @@
-import { Form } from 'antd';
+import { Form } from 'src/components';
 
 import { Credentials } from '../../declarations/Auth';
 

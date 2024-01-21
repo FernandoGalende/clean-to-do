@@ -1,4 +1,4 @@
-import { Form, Input } from 'antd';
+import { Form, Input } from 'src/components';
 
 import { Credentials } from 'src/declarations/Auth';
 
@@ -24,7 +24,6 @@ function LoginView({ form, handleOnSubmit, loading, error }: LoginViewProps) {
       >
         <Input />
       </Form.Item>
-
       <Form.Item<Credentials>
         label="Password"
         name="password"
@@ -32,7 +31,6 @@ function LoginView({ form, handleOnSubmit, loading, error }: LoginViewProps) {
       >
         <Input.Password />
       </Form.Item>
-
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <SubmitButton {...{ form, loading, error }} />
       </Form.Item>

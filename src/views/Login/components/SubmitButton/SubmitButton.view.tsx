@@ -1,4 +1,4 @@
-import { Button } from 'antd';
+import { Button } from 'src/components';
 import { SubmitButtonViewProps } from './SubmitButton.decl';
 
 function SubmitButtonView({ submittable, error, loading }: SubmitButtonViewProps) {
