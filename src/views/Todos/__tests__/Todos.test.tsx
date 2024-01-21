@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import Todos from '../Todos.container';
 
-import * as useTodosContext from '../../../context/TodosContext/useTodos';
+import * as useTodosContext from 'src/context/TodosContext/useTodos';
 
 const renderTodos = () => {
   return render(<Todos />);
