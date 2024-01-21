@@ -1,9 +1,9 @@
-import { Form, Input } from 'antd';
+import { Form } from 'antd';
 
 import { Credentials } from '../../declarations/Auth';
 
-import { SubmitButton } from './components';
 import { useAuth } from 'src/context';
+import LoginView from './Login.view';
 
 function Login() {
   const [form] = Form.useForm();
@@ -13,38 +13,7 @@ function Login() {
     await login(credentials);
   };
 
-  return (
-    <Form
-      form={form}
-      name="basic"
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
-      style={{ maxWidth: 600 }}
-      initialValues={{ remember: true }}
-      onFinish={handleOnSubmit}
-      autoComplete="off"
-    >
-      <Form.Item<Credentials>
-        label="Email"
-        name="email"
-        rules={[{ required: true, message: 'Please input your email!', type: 'email' }]}
-      >
-        <Input />
-      </Form.Item>
-
-      <Form.Item<Credentials>
-        label="Password"
-        name="password"
-        rules={[{ required: true, message: 'Please input your password!' }]}
-      >
-        <Input.Password />
-      </Form.Item>
-
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <SubmitButton {...{ form, loading, error }} />
-      </Form.Item>
-    </Form>
-  );
+  return <LoginView {...{ form, handleOnSubmit, loading, error }} />;
 }
 
 export default Login;

@@ -1,30 +1,24 @@
 import { test, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-// To Test
-import TaskText from '../TaskText.container';
+
+import TaskTitle from '../TaskTitle.container';
 
 import { TodosProvider } from 'src/context';
-import { TaskDeskProps } from '../TaskText.decl';
-
-const mockTodo = {
-  id: '1',
-  task: 'learn react',
-  done: false
-};
-
-const renderTaskText = (props: TaskDeskProps) => {
-  return render(
-    <TodosProvider>
-      <TaskText {...props} />
-    </TodosProvider>
-  );
-};
 
 describe('TaskTest', () => {
   test('Should edit a task', async () => {
     const updateTask = vi.fn();
-    renderTaskText({ todo: mockTodo, updateTask });
+    const mockTodo = {
+      id: '1',
+      task: 'learn react',
+      done: false
+    };
+    render(
+      <TodosProvider>
+        <TaskTitle {...{ todo: mockTodo, updateTask }} />
+      </TodosProvider>
+    );
     const editButton = screen.getByRole('button', { name: /edit/i });
     await userEvent.click(editButton);
 

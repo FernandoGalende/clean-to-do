@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
-import { FormInstance, Button, Form } from 'antd';
+import { Form } from 'antd';
 
-type SubmitButtonProps = { form: FormInstance; error: boolean; loading: boolean };
+import SubmitButtonView from './SubmitButton.view';
+import { SubmitButtonProps } from './SubmitButton.decl';
 
-const SubmitButton = ({ form, error, loading }: SubmitButtonProps) => {
+function SubmitButton({ form, error, loading }: SubmitButtonProps) {
   const [submittable, setSubmittable] = useState(false);
-
-  // Watch all values
-  const values = Form.useWatch([], form);
+  const values = Form.useWatch([], form); // Watch all values
 
   useEffect(() => {
     form.validateFields({ validateOnly: true }).then(
@@ -20,11 +19,7 @@ const SubmitButton = ({ form, error, loading }: SubmitButtonProps) => {
     );
   }, [values, form]);
 
-  return (
-    <Button type="primary" htmlType="submit" disabled={!submittable || error} loading={loading}>
-      Login
-    </Button>
-  );
-};
+  return <SubmitButtonView {...{ submittable, error, loading }} />;
+}
 
 export default SubmitButton;

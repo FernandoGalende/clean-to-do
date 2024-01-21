@@ -3,8 +3,7 @@ import { test, vi } from 'vitest';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import * as useAuthContext from 'src/context';
-
-import { ProtectedRoute } from '../ProtectedRoute';
+import ProtectedRoute from '../ProtectedRoute.container';
 
 describe('ProtectedRoute', () => {
   test('Should renders children when authenticated', () => {

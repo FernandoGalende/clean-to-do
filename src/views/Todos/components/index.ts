@@ -1,1 +1,1 @@
-export { default as TaskText } from './TaskText/TaskText.container';
+export { default as TaskTitle } from './TaskTitle/TaskTitle.container';
