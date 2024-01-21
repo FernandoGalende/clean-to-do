@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 describe('Auth', () => {
   it('Should login and logout sucessfully', () => {
     cy.visit('/');
