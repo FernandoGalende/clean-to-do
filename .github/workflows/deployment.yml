@@ -31,6 +31,9 @@ jobs:
       - name: 🧹 Lint
         run: pnpm run lint
 
+      - name: 🛟 Typescript
+        run: pnpm run typecheck
+
       - name: ✅ Test
         run: pnpm run test
 
