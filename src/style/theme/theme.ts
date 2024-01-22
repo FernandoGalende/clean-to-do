@@ -1,6 +1,6 @@
 import { defaultTheme as xdDefaultTheme } from '@xstyled/styled-components';
 
-import { colorTokens } from '../color';
+import { colorTokens } from './color';
 
 export const defaultTheme = {
   ...xdDefaultTheme,
