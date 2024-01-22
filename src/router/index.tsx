@@ -12,7 +12,7 @@ const AppRouter = () => (
     <AuthProvider>
       <GlobalAppStyle />
       <Routes>
-        <Route path="/" element={<Navigate to={LOGIN} />} />
+        <Route path="/" element={<Navigate to={LOGIN} />} index />
         {routes.map(({ Component, path, isPrivate }) => {
           let routeElement = <Component />;
 
@@ -26,6 +26,7 @@ const AppRouter = () => (
 
           return <Route key={path} path={path} element={routeElement} />;
         })}
+        <Route path="*" element={<Navigate to={LOGIN} />} />
       </Routes>
     </AuthProvider>
   </BrowserRouter>

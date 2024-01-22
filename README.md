@@ -184,7 +184,5 @@ I pick this library in order to be faster. Also I think is clean and easy to use
 - Responsive
 - Styles
 
-## Made with love by:
-
 [Fernando Galende](https://www.linkedin.com/in/fernandogalende/)
 **Senior Frontend Engineer && Senior Designer**
