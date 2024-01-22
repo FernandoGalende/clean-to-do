@@ -5,14 +5,14 @@ describe('Storage - Auth', () => {
     localStorage.clear();
   });
 
-  test('should set and get item', () => {
+  test('Should set and get item', () => {
     const token = 'xxxxx';
     setAccessToken(token);
 
     expect(getAccessToken()).toBe(token);
   });
 
-  test('should remove item', () => {
+  test('Should remove item', () => {
     const token = 'xxxxx';
 
     localStorage.setItem('access_token', token);

@@ -13,7 +13,7 @@ vi.mock('react-router-dom', async () => {
 });
 
 describe('useTodos', () => {
-  test('returns the context values', () => {
+  test('Should returns the context values', () => {
     const { result } = renderHook(() => useTodos(), {
       wrapper: TodosProvider // Wrap the hook with context provider
     });
@@ -26,7 +26,7 @@ describe('useTodos', () => {
     expect(typeof result.current.toggleTask).toBe('function');
   });
 
-  test('add, update, toggle, and delete task', () => {
+  test('Should add, update, toggle, and delete task', () => {
     Object.defineProperty(globalThis, 'crypto', {
       value: {
         randomUUID: () => '1'
@@ -63,7 +63,7 @@ describe('useTodos', () => {
     expect(result.current.todos).toEqual([]);
   });
 
-  test('add two todos with the same task', () => {
+  test('Should add two todos with the same task', () => {
     Object.defineProperty(globalThis, 'crypto', {
       value: {
         randomUUID: () => '1'

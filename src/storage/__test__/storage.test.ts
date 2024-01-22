@@ -5,14 +5,14 @@ describe('Storage', () => {
     localStorage.clear();
   });
 
-  test('should set and get item', () => {
+  test('Should set and get item', () => {
     const session = 'abc123';
     localStorage.setItem('access_token', session);
 
     expect(getItem('access_token')).toBe(session);
   });
 
-  test('should remove item', () => {
+  test('Should remove item', () => {
     const session = 'abc123';
 
     localStorage.setItem('access_token', session);

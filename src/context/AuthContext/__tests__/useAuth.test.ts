@@ -16,7 +16,7 @@ describe('useAuth', () => {
     cleanup();
   });
 
-  test('returns the context values', () => {
+  test('Should returns the context values', () => {
     const { result } = renderHook(() => useAuth(), {
       wrapper: AuthProvider // Wrap the hook with context provider
     });
@@ -30,7 +30,7 @@ describe('useAuth', () => {
     expect(typeof result.current.logout).toBe('function');
   });
 
-  test('returns isAuthenticated true after login and false after logout', async () => {
+  test('Should returns isAuthenticated true after login and false after logout', async () => {
     const { result, rerender } = renderHook(() => useAuth(), {
       wrapper: AuthProvider // Wrap the hook with context provider
     });
