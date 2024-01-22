@@ -45,6 +45,10 @@ I use local storage to keep the token.
 
 **_IMPORTANT:_** I am not keeping the todos on the storage since the challenge description don't said it.
 
+### Errors
+
+I have added a generic error page which is rendered if any error happens.
+
 ## Architecture
 
 ```

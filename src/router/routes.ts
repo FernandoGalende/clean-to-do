@@ -1,4 +1,4 @@
-import * as views from '../views';
+import * as views from '../pages';
 
 import { LOGIN, TODOS } from './paths';
 
