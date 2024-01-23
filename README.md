@@ -23,7 +23,7 @@ This is my vision of this code challenge. I put a lot of ❤️ on it.
 
 ### Global state
 
-I use `Context` as is the light way to handle global states on React
+I use `Context` as is the light way to handle global states on React.
 
 ### Container/Presentational Pattern
 
@@ -158,7 +158,7 @@ I used to cover the main use cases of the app.
 - Real test cases
 - CI / CD integration
 
-### Styled Components
+### @xstyled/styled-components
 
 I have choose styled components because I am faster with it. I have no any inconvenience in work with scss. I think SC match very well with React and Typescript because of:
 
@@ -168,13 +168,12 @@ I have choose styled components because I am faster with it. I have no any incon
 - Reutilization
 - Faster
 
-### XStyled
-
-It is a utility first css framework. It helps a lot with consistency in Design Systems and theming. [XStyled](https://xstyled.dev/)
+[XStyled](https://xstyled.dev/) is a utility first css framework. It helps a lot with consistency in Design Systems and theming.
 
 ### Ant-design
 
-I pick this library in order to be faster. Also I think is clean and easy to use. [Ant Design](https://ant.design/)
+I pick this library in order to be faster. Also I think is clean and easy to use. [Ant Design](https://ant.design/).
+I saw you used to use Material UI, it is also a good choice. I have picked ant because I am faster.
 
 ## To improve
 
