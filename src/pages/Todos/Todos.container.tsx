@@ -5,7 +5,7 @@ import { useTodos } from 'src/context';
 import TodosView from './Todos.view';
 
 function Todos() {
-  const { addTask, deleteTask, toggleTask, updateTask, todos } = useTodos();
+  const { addTask } = useTodos();
 
   const [task, setTask] = useState<string>('');
 
@@ -16,16 +16,17 @@ function Todos() {
     setTask('');
   };
 
+  const handleKeyPress = (evt: React.KeyboardEvent<HTMLInputElement>) => {
+    if (evt.key !== 'Enter') return;
+    handleOnAddTask();
+  };
+
   return (
     <TodosView
       {...{
-        addTask,
-        deleteTask,
-        toggleTask,
-        updateTask,
-        todos,
         isAddDisabled,
         handleOnAddTask,
+        handleKeyPress,
         task,
         setTask
       }}

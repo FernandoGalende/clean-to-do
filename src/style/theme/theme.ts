@@ -4,7 +4,10 @@ import { colorTokens } from './color';
 
 export const defaultTheme = {
   ...xdDefaultTheme,
-  ...colorTokens
+  colors: {
+    ...xdDefaultTheme.colors,
+    ...colorTokens
+  }
 };
 
 type BaseTheme = typeof defaultTheme;

@@ -15,7 +15,7 @@ body {
     font-family: sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: ${getColor('cool-gray-900')};
+    background: ${getColor('surface-background-primary')};
     > div {
         height  : 100%;
     }
@@ -41,7 +41,7 @@ a {
 }
 
   body {
-    background-color: background-01;
+    background-color:  ${getColor('surface-background')};
   }
 
   #root {

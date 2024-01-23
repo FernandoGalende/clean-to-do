@@ -1,8 +1,7 @@
-import { ProviderType as ProviderTypeTodos } from 'src/context/TodosContext/useTodos.decl';
-
-export type TodosViewProps = Omit<ProviderTypeTodos, 'addTask'> & {
+export type TodosViewProps = {
   isAddDisabled: boolean;
   handleOnAddTask: () => void;
+  handleKeyPress: (key: React.KeyboardEvent<HTMLInputElement>) => void;
   task: string;
   setTask: (task: string) => void;
 };

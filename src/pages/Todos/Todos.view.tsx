@@ -1,46 +1,50 @@
-import { TaskTitle } from './components';
-import { TodosViewProps } from './Todos.decl';
-import { Button, Input, Space, Checkbox, Card, DeleteTwoTone } from 'src/components';
 import { Flex } from 'src/style/components';
 
+import { Button, Input, Space } from 'src/components';
+
+import { TodosList } from './components';
+import { TodosViewProps } from './Todos.decl';
+
 function TodosView({
-  deleteTask,
-  toggleTask,
-  updateTask,
-  todos,
   isAddDisabled,
   handleOnAddTask,
+  handleKeyPress,
   task,
   setTask
 }: TodosViewProps) {
   return (
-    <Flex flexDirection="column">
+    <Flex
+      flexDirection="column"
+      backgroundColor="surface-background"
+      borderRadius="4"
+      padding="3"
+      gap="4"
+      w="330"
+    >
       <Space.Compact style={{ width: '100%' }}>
-        <Input value={task} onChange={evt => setTask(evt.target.value)} data-testid="add-input" />
+        <Input
+          value={task}
+          placeholder="add task"
+          onChange={evt => setTask(evt.target.value)}
+          data-testid="add-input"
+          onKeyDown={handleKeyPress}
+        />
         <Button type="primary" onClick={handleOnAddTask} disabled={isAddDisabled}>
           Add
         </Button>
       </Space.Compact>
-      <Flex data-testid="list" flexDirection="column" gap="2" padding="2">
-        {todos.map(todo => (
-          <Card
-            style={{ width: '100%' }}
-            hoverable
-            size="small"
-            key={todo.id}
-            data-testid={`card-${todo.id}`}
-          >
-            <Flex w="100%" justifyContent="space-between">
-              <Checkbox
-                checked={todo.done}
-                onClick={() => toggleTask(todo.id)}
-                name="mark-as-done"
-              />
-              <TaskTitle todo={todo} updateTask={updateTask} />
-              <Button shape="circle" icon={<DeleteTwoTone />} onClick={() => deleteTask(todo.id)} />
-            </Flex>
-          </Card>
-        ))}
+      <Flex
+        data-testid="list"
+        flexDirection="column"
+        gap="2"
+        padding="2"
+        overflow="scroll"
+        h="500"
+        borderWidth={1}
+        borderStyle="solid"
+        borderColor="graphic-interactive-default"
+      >
+        <TodosList />
       </Flex>
     </Flex>
   );

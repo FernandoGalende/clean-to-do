@@ -1,24 +1,22 @@
-import AppRoutes from './router';
-import { ErrorBoundary } from './pages';
-import { Box, Flex } from './style/components';
 import { ThemeProvider } from '@xstyled/styled-components';
-import { defaultTheme } from './style/theme/theme';
 
-const iphoneXR = {
-  w: '390px',
-  h: '844px'
-};
+import AppRoutes from 'src/router';
+import { ErrorBoundary } from 'src/pages';
+import { Flex } from 'src/style/components';
+import { defaultTheme } from 'src/style/theme/theme';
+import { Author } from 'src/components';
 
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Box w="100vw" h="100vh">
-        <Flex {...iphoneXR} backgroundColor="white" padding="14" scroll="block">
+      <Flex w="100vw" h="100vh" alignItems="center" justifyContent="center">
+        <Flex justifyContent="center">
           <ErrorBoundary>
             <AppRoutes />
+            <Author />
           </ErrorBoundary>
         </Flex>
-      </Box>
+      </Flex>
     </ThemeProvider>
   );
 }

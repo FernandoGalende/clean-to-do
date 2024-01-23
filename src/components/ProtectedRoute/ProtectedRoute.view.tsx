@@ -1,17 +1,23 @@
 import { ProtectedRouteViewProps } from './ProtectedRoute.decl';
 
 import { Flex } from 'src/style/components';
-import { Row, Button, Col } from 'src/components';
+import { Radio } from 'src/components';
 
 function ProtectedRouteView({ children, logout }: ProtectedRouteViewProps) {
   return (
     <Flex flexDirection="column">
-      <Row justify="end">
-        <Button type="text" onClick={logout}>
+      <Flex
+        backgroundColor="surface-background"
+        borderRadius="4"
+        position="absolute"
+        top="16"
+        right="16"
+      >
+        <Radio.Button type="text" onClick={logout}>
           Logout
-        </Button>
-      </Row>
-      <Col span={24}>{children}</Col>
+        </Radio.Button>
+      </Flex>
+      <Flex borderRadius="4">{children}</Flex>
     </Flex>
   );
 }

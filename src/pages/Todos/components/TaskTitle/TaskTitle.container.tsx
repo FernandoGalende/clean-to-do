@@ -17,7 +17,7 @@ function TaskTitle({ todo, updateTask }: TaskTitleProps) {
   if (isEditing) return <TaskTitleEditor {...{ update, setUpdateTask, handleUpdateTask }} />;
 
   return (
-    <Flex w="100%" alignItems="center" justifyContent="space-between" px="8">
+    <Flex w="100%" alignItems="center" justifyContent="space-between" px="2">
       <Typography.Text delete={todo.done}>{todo.task}</Typography.Text>
       <Button shape="circle" icon={<EditTwoTone />} onClick={() => setEditing(true)} />
     </Flex>
