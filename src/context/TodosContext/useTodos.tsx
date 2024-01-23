@@ -1,6 +1,7 @@
-import { createContext, useCallback, useContext, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 import { TodoProviderProps, ProviderType } from './useTodos.decl';
+import { getItem, setItem } from 'src/storage';
 
 const defaultState: ProviderType = {
   addTask: () => {},
@@ -13,7 +14,11 @@ const defaultState: ProviderType = {
 const TodosContext = createContext(defaultState);
 
 export const TodosProvider = ({ children }: TodoProviderProps) => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useState<Todo[]>(() => getItem('todos') ?? []);
+
+  useEffect(() => {
+    setItem('todos', todos);
+  }, [todos]);
 
   const addTask = useCallback((task: string) => {
     const todo = { task, done: false, id: crypto.randomUUID() };

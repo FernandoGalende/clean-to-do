@@ -1,9 +1,10 @@
-import { Form, Input } from 'src/components';
+import { Form, Input, Typography } from 'src/components';
 
 import { Credentials } from 'src/declarations/Auth';
 
 import { SubmitButton } from './components';
 import { LoginViewProps } from './Login.decl';
+import { Box } from 'src/style/components';
 
 function LoginView({ form, handleOnSubmit, loading, error }: LoginViewProps) {
   return (
@@ -20,7 +21,13 @@ function LoginView({ form, handleOnSubmit, loading, error }: LoginViewProps) {
       <Form.Item<Credentials>
         label="Email"
         name="email"
-        rules={[{ required: true, message: 'Please input your email!', type: 'email' }]}
+        rules={[
+          {
+            required: true,
+            message: 'Please input your email!',
+            type: 'email'
+          }
+        ]}
       >
         <Input />
       </Form.Item>
@@ -31,6 +38,9 @@ function LoginView({ form, handleOnSubmit, loading, error }: LoginViewProps) {
       >
         <Input.Password />
       </Form.Item>
+      <Box mb="2">
+        {error && <Typography.Text type="danger">{'Invalid credentials'}</Typography.Text>}
+      </Box>
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <SubmitButton {...{ form, loading, error }} />
       </Form.Item>

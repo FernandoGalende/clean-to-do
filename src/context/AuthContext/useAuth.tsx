@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import * as api from 'src/api';
 import { Credentials } from 'src/declarations/Auth';
 import { TODOS, LOGIN } from 'src/router/paths';
-import { clearSessionStorage, getAccessToken, setAccessToken } from 'src/storage/auth';
+
 import { AuthProviderProps, ProviderType } from './useAuth.decl';
+import { getItem, removeItem, setItem } from 'src/storage';
 
 const defaultState: ProviderType = {
   login: () => {},
@@ -18,7 +19,7 @@ const defaultState: ProviderType = {
 const AuthContext = createContext(defaultState);
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const isAuthenticated = !!getAccessToken();
+  const isAuthenticated = !!getItem('access_token');
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
@@ -31,9 +32,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       try {
         const res = await api.login(credentials);
         if (!res.ok) {
-          throw new Error('Request failed');
+          setError(true);
+          return;
         }
-        setAccessToken(res.access_token);
+        setItem('access_token', res.access_token);
         navigate(TODOS);
       } catch {
         setError(true);
@@ -46,7 +48,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   // call this function to sign out logged in user
   const logout = useCallback(() => {
-    clearSessionStorage();
+    removeItem('todos');
+    removeItem('access_token');
     navigate(LOGIN);
   }, [navigate]);
 

@@ -37,13 +37,11 @@ I work with this pattern on the components because of the separations of concern
 
 ### Storage
 
-I use local storage to keep the token.
+I use local storage to keep the token and the todos
 
 - Global scope on all tabs
 - Capacity
 - Persistence until explicitly cleared
-
-**_IMPORTANT:_** I am not keeping the todos on the storage since the challenge description don't said it.
 
 ### Errors
 
@@ -178,6 +176,7 @@ I saw you used to use Material UI, it is also a good choice. I have picked ant b
 ## To improve
 
 - Errors
+- Performance
 - Accessibility
 - Design
 - Responsive

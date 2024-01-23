@@ -12,7 +12,7 @@ const iphoneXR = {
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Box w="100vw" h="100vh" data-testid="xxxx">
+      <Box w="100vw" h="100vh">
         <Flex {...iphoneXR} backgroundColor="white" padding="14" scroll="block">
           <ErrorBoundary>
             <AppRoutes />
