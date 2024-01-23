@@ -1,7 +1,7 @@
 import { ProtectedRouteViewProps } from './ProtectedRoute.decl';
 
 import { Flex } from 'src/style/components';
-import { Radio } from 'src/components';
+import { Button } from 'src/components';
 
 function ProtectedRouteView({ children, logout }: ProtectedRouteViewProps) {
   return (
@@ -13,9 +13,7 @@ function ProtectedRouteView({ children, logout }: ProtectedRouteViewProps) {
         top="16"
         right="16"
       >
-        <Radio.Button type="text" onClick={logout}>
-          Logout
-        </Radio.Button>
+        <Button onClick={logout}>Logout</Button>
       </Flex>
       <Flex borderRadius="4">{children}</Flex>
     </Flex>
