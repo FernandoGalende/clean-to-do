@@ -21,7 +21,7 @@ function TodosView({
           Add
         </Button>
       </Space.Compact>
-      <Flex data-testid="list">
+      <Flex data-testid="list" flexDirection="column" gap="2" padding="2">
         {todos.map(todo => (
           <Card
             style={{ width: '100%' }}
