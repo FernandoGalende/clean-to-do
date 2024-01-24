@@ -16,6 +16,7 @@ const TodosContext = createContext(defaultState);
 export const TodosProvider = ({ children }: TodoProviderProps) => {
   const [todos, setTodos] = useState<Todo[]>(() => getItem('todos') ?? []);
 
+  // As a performance optimization I would replace this useEffect to save only only before refresh.
   useEffect(() => {
     setItem('todos', todos);
   }, [todos]);

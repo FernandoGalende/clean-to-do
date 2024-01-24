@@ -14,6 +14,8 @@ function LoginView({ form, handleOnSubmit, loading, error }: LoginViewProps) {
       backgroundColor="surface-background"
       borderRadius="4"
       h="400"
+      w="80vw"
+      maxWidth="330"
       gap="10"
     >
       <Typography.Title style={{ textAlign: 'center', fontWeight: 'bold' }}>

@@ -19,7 +19,8 @@ function TodosView({
       borderRadius="4"
       padding="3"
       gap="4"
-      w="330"
+      w="80vw"
+      maxWidth="330"
     >
       <Space.Compact style={{ width: '100%' }}>
         <Input
@@ -39,7 +40,7 @@ function TodosView({
         gap="2"
         padding="2"
         overflow="scroll"
-        h="500"
+        h="450"
         borderWidth={1}
         borderStyle="solid"
         borderColor="graphic-interactive-default"

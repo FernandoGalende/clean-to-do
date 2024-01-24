@@ -1,6 +1,5 @@
 # Fernando Galende + Sparta Commodities
 
-[Link to project in GitHub](https://github.com/FernandoGalende/sparta-commodities)
 [Link to deployed app in Vercel](https://sparta-commodities.vercel.app)
 
 ## Intro

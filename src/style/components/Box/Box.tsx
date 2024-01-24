@@ -22,24 +22,15 @@ import {
   tables,
   overflow,
   overflowX,
-  overflowY,
-} from "@xstyled/styled-components"
+  overflowY
+} from '@xstyled/styled-components';
 
-import { BoxProps } from "./Box.decl"
+import { BoxProps } from './Box.decl';
 
-const flexboxItem = compose(
-  flex,
-  flexGrow,
-  flexShrink,
-  flexBasis,
-  justifySelf,
-  alignSelf,
-  order
-)
+const flexboxItem = compose(flex, flexGrow, flexShrink, flexBasis, justifySelf, alignSelf, order);
 
-const gridItem = compose(gridArea, gridColumn, gridRow)
+const gridItem = compose(gridArea, gridColumn, gridRow);
 
-// Todo: See if `lineHeight` is used somewhere! (Dashboard, Phone, admin portal)
 export const boxSystem = compose<BoxProps>(
   space,
   sizing,
@@ -55,10 +46,10 @@ export const boxSystem = compose<BoxProps>(
   overflow,
   overflowX,
   overflowY
-)
+);
 
-const { x } = createCss(boxSystem)
+const { x } = createCss(boxSystem);
 
-const Box = x.div
+const Box = x.div;
 
-export default Box
+export default Box;

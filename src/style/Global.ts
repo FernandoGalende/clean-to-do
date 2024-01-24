@@ -16,9 +16,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: ${getColor('surface-background-primary')};
-    > div {
-        height  : 100%;
-    }
 }
 
 input:focus,
@@ -35,11 +32,6 @@ a {
     text-decoration: none;
 }
 
-.responsive-video {
-    width: 100%;
-    height: 100%;
-}
-
   body {
     background-color:  ${getColor('surface-background')};
   }
@@ -48,7 +40,6 @@ a {
     display: grid;
     place-items: center;
     grid-template-rows: 1fr;
-    width: 100vw;
     overflow-y: auto;
   }
 
