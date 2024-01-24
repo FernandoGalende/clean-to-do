@@ -54,9 +54,11 @@ function LoginView({ form, handleOnSubmit, loading, error }: LoginViewProps) {
         <Box mb="2">
           {error && <Typography.Text type="danger">{'Invalid credentials'}</Typography.Text>}
         </Box>
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-          <SubmitButton {...{ form, loading, error }} />
-        </Form.Item>
+        <Flex alignItems="center" justifyContent="center">
+          <Form.Item>
+            <SubmitButton {...{ form, loading, error }} />
+          </Form.Item>
+        </Flex>
       </Form>
     </Flex>
   );

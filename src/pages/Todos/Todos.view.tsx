@@ -40,7 +40,7 @@ function TodosView({
         gap="2"
         padding="2"
         overflow="scroll"
-        h="450"
+        h="415"
         borderWidth={1}
         borderStyle="solid"
         borderColor="graphic-interactive-default"

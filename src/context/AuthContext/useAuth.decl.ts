@@ -8,6 +8,6 @@ export type ProviderType = {
   error: boolean;
 };
 
-export type AuthProviderProps = {
+export interface AuthProviderProps {
   children: React.ReactNode;
-};
+}

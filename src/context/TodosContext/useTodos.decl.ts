@@ -6,6 +6,6 @@ export type ProviderType = {
   todos: Todo[];
 };
 
-export type TodoProviderProps = {
+export interface TodoProviderProps {
   children: React.ReactNode;
-};
+}
