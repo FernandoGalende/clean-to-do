@@ -1,18 +1,16 @@
-# Fernando Galende + Sparta Commodities
+# Clean to do
 
-[Link to deployed app in Vercel](https://sparta-commodities.vercel.app)
+[Link to deployed app in Vercel](https://clean-to-do.vercel.app)
 
 ## Intro
 
 This is a Single Page Application created with vite using a React Typescript template.
 
-This is my vision of this code challenge. I put a lot of ❤️ on it.
-
 ## Getting started locally with pnpm
 
 1. Ensure [Node.js](https://nodejs.org/) is installed.
 1. Install [pnpm](https://pnpm.io/installation) globally: `$ npm install -g pnpm`
-1. Clone the repository: `$ git clone https://github.com/FernandoGalende/sparta-commodities`
+1. Clone the repository: `$ git clone https://github.com/FernandoGalende/clean-to-do`
 1. Install packages `$ pnpm install`
 1. Start the development server: `$ pnpm dev` + open `http://127.0.0.1:5173`
 1. Run tests: `$ pnpm test`
@@ -26,7 +24,7 @@ I use `Context` as is the light way to handle global states on React.
 
 ### Container/Presentational Pattern
 
-I work with this pattern on the components because of the separations of concerns. Views has only layouts. Containers has logic.
+I have worked with this pattern on the components because of the separations of concerns. Views has only layouts. Containers has logic.
 [Explanation](https://www.patterns.dev/react/presentational-container-pattern/)
 
 ### Fixed versions
@@ -170,7 +168,7 @@ I have choose styled components because I am faster with it. I have no any incon
 ### Ant-design
 
 I pick this library in order to be faster. Also I think is clean and easy to use. [Ant Design](https://ant.design/).
-I saw you used to use Material UI, it is also a good choice. I have picked ant because I am faster.
+I have picked ant because I am faster.
 
 ## To improve
 

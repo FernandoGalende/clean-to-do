@@ -19,7 +19,7 @@ function LoginView({ form, handleOnSubmit, loading, error }: LoginViewProps) {
       gap="10"
     >
       <Typography.Title style={{ textAlign: 'center', fontWeight: 'bold' }}>
-        Sparta ToDo
+        Clean to do
       </Typography.Title>
       <Form
         form={form}
