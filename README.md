@@ -6,6 +6,10 @@
 
 This is a Single Page Application created with vite using a React Typescript template.
 
+## Instructions
+
+This website is designed for registering our daily tasks, accessible through a straightforward login page. Upon visiting the site without being signed in, users must log in using a username/password and simulate a request; no actual network request is necessary. The simulated request consistently returns a valid token, with any string serving as a token. Once signed in, the login status should persist even if the user closes and reopens the webpage; ensuring this persistence is crucial and should be implemented optimally. After signing in, the website features a text label along with buttons for adding, updating, marking as done, and removing tasks. If the user logs out and then signs in again, no tasks will be displayed.
+
 ## Getting started locally with pnpm
 
 1. Ensure [Node.js](https://nodejs.org/) is installed.
